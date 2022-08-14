@@ -25,11 +25,13 @@ import java.util.Objects;
 
 public final class GraphicalInterface extends JFrame {
 
+    private static final Color color;
     public static final DefaultTableModel model;
     public static final JCheckBox checkBox;
     public static final JTextArea textArea;
 
     static {
+        color = new Color(184, 217, 209, 255);
         model = new DefaultTableModel();
         checkBox = new JCheckBox();
         textArea = new JTextArea();
@@ -46,7 +48,7 @@ public final class GraphicalInterface extends JFrame {
         /* Set some attributes to our gui (icon, size, background color). */
         setLayout(null);
         setResizable(false);
-        getContentPane().setBackground(Color.LIGHT_GRAY);
+        getContentPane().setBackground(color);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setIconImage(new ImageIcon(Objects.requireNonNull(getClass().getResource("/assets/icon.png"))).getImage());
         setSize(450, 400);
@@ -125,7 +127,7 @@ public final class GraphicalInterface extends JFrame {
 
         /* Add the exclusions checkbox */
         checkBox.setText("Exclude");
-        checkBox.setBackground(Color.LIGHT_GRAY);
+        checkBox.setBackground(color);
         checkBox.setBounds(getWidth() - 110, 8, 100, 20);
         add(checkBox);
 
