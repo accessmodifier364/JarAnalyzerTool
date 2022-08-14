@@ -8,6 +8,7 @@ import me.accessmodifier364.jat.util.JarReaderUtil;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
@@ -43,15 +44,19 @@ public final class GraphicalInterface extends JFrame {
      * @throws HeadlessException From parent.
      */
     public GraphicalInterface() throws HeadlessException {
-        super("Jar Analyzer Tool v1.0");
+        super("Jar Analyzer Tool v1.1");
 
-        /* Set some attributes to our gui (icon, size, background color). */
+        /* Set some attributes to our gui (icon, size, background color, look-and-feel). */
         setLayout(null);
         setResizable(false);
         getContentPane().setBackground(color);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setIconImage(new ImageIcon(Objects.requireNonNull(getClass().getResource("/assets/icon.png"))).getImage());
         setSize(450, 400);
+        try {
+            UIManager.setLookAndFeel(new NimbusLookAndFeel());
+        } catch (UnsupportedLookAndFeelException ignored) {
+        }
 
         /* Add the "Start" button which runs all the checks. */
         final JButton button = new JButton("Start");
