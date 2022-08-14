@@ -66,6 +66,6 @@ public final class URLCheck extends AbstractCheck {
     }
 
     private boolean isBase64Webhook(String string) {
-        return string.startsWith("aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3Mv"); //
+        return string.startsWith("aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3Mv"); // xd
     }
 }
